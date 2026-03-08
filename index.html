@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>increase</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgb(91, 83, 38);
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            text-transform: capitalize;
+            padding: 13px 2px;
+        }
+
+        .container {
+            font-size: 17px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #i-amount {
+            margin-bottom: 4px;
+        }
+       #i-amount,#i-price,#c-price{
+        width:250px;
+        #i-amount,#i-price,#c-price {
+         height :20px;
+}
+ll
+        #i-price {
+            margin-bottom: 7px;
+        }
+
+        #i-price,
+        input {
+            width: 200px;
+            margin-top: 2px;
+        }
+
+        #i-price,
+        #c-price,
+        #i-amount,
+        input::placeholder {
+            padding: 4px 5px;
+
+        }
+
+        #c-price {
+            margin-bottom: 7px;
+            margin-top: 2px;
+        }
+
+        .submit-button {
+            background-color: rgb(73, 73, 187);
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 3px;
+            margin-top:7px;
+        }
+
+        .submit-button:active {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">price action automator</div>
+    </header>
+    <div class="container">
+        <label for="i-amount:">Initial amount</label>
+        <input id="i-amount" type="text" placeholder="Enter amount...">
+        <label for="i-price">Initial price:</label>
+        <input id="i-price" type="text" placeholder="Enter price...">
+        <label for="c-price">Current price:</label>
+        <input id="c-price" type="text" placeholder="Enter price...">
+
+        <button class="submit-button">submit</button>
+        <div class="display"></div>
+    </div>
+    <script>
+        document.querySelector('.submit-button').addEventListener('click', () => {
+            const amount = parseFloat(document.querySelector('#i-amount').value);
+            const init = parseFloat(document.querySelector('#i-price').value);
+            const Current = parseFloat(document.querySelector('#c-price').value);
+            shares = prompt("Enter number of shares:")
+            const difference = Current - init;
+            const total = (difference * shares) + amount
+            total1 = Number(total.toFixed(2)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+            const gain = difference * shares;
+            gain1 = Number(gain.toFixed(2)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+            document.querySelector(".display").innerText = `Total amount is KES ${total1} 
+            Value gain is KES ${gain1}
+            `
+            document.querySelector('#i-amount').value = "";
+            document.querySelector('#i-price').value = "";
+            document.querySelector('#c-price').value = "";
+        })
+
+    </script>
+</body>
+
+</html>
