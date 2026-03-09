@@ -24,10 +24,7 @@
         .container {
             font-size: 17px;
             margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            text-align:center;
 
         }
 
@@ -36,16 +33,12 @@
         }
        #i-amount,#i-price,#c-price{
         width:250px;
-        #i-amount,#i-price,#c-price {
-         height :20px;
-}
         #i-price {
             margin-bottom: 7px;
         }
 
         #i-price,
         input {
-            width: 200px;
             margin-top: 2px;
         }
 
@@ -74,6 +67,8 @@
         .submit-button:active {
             opacity: 0.7;
         }
+        .display {
+            margin-top:10px;
     </style>
 </head>
 
@@ -82,12 +77,12 @@
         <div class="title">price action automator</div>
     </header>
     <div class="container">
-        <label for="i-amount:">Initial amount</label>
-        <input id="i-amount" type="text" placeholder="Enter amount...">
-        <label for="i-price">Initial price:</label>
-        <input id="i-price" type="text" placeholder="Enter price...">
-        <label for="c-price">Current price:</label>
-        <input id="c-price" type="text" placeholder="Enter price...">
+        <label for="i-amount:">Initial amount</label><br>
+        <input id="i-amount" type="text" placeholder="Enter amount..."><br>
+        <label for="i-price">Initial price:</label><br>
+        <input id="i-price" type="text" placeholder="Enter price..."><br>
+        <label for="c-price">Current price:</label><br>
+        <input id="c-price" type="text" placeholder="Enter price..."><br>
 
         <button class="submit-button">submit</button>
         <div class="display"></div>
